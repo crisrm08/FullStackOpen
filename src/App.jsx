@@ -15,11 +15,9 @@ const App = () => {
   
     const newTotal = good + neutral + bad;
     setTotal(newTotal);
-
-    const newAverage = (good - bad) / newTotal;
+    const newAverage = newTotal > 0 ? (good - bad) / newTotal : 0;
     setAverage(newAverage);
-
-    const newPositive = (good / newTotal) * 100;
+    const newPositive = newTotal > 0 ? (good / newTotal) * 100 : 0;
     setPositive(newPositive);
 
   }, [good, neutral, bad]); 
